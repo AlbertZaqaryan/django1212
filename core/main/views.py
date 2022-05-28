@@ -1,18 +1,19 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
-from .models import Bag 
+from django.views.generic import ListView
+from .models import Category, Shoose, Brend
 # Create your views here.
 
-class BagListView(ListView):
+class CategoryListView(ListView):
     template_name = 'home.html'
 
     def get(self, request):
-        bags = Bag.objects.all()
-        return render(request, self.template_name, {'bags':bags})
+        categories = Category.objects.all()
+        return render(request, self.template_name, {'categories':categories})
 
-class BagDetailView(DetailView):
-    template_name = 'home_detail.html'
 
-    def get(self, request, id):
-        bag = Bag.objects.get(pk=id)
-        return render(request, self.template_name, {'bag':bag})
+def test(request):
+    return render(request, 'home_detail.html')
+
+
+def test_detail(request):
+    return render(request, 'home_detail_detail.html')

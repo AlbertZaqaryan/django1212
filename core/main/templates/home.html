@@ -7,9 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    {% for bag in bags %}
-    <a href="{% url 'home_detail' bag.id %}"><img src="{{ bag.img.url }}" width="200px" title="{{ bag.about }}" alt=""></a><br><br>
-    <h1>{{ bag.name }}</h1>
+    {% for i in categories %}
+        <a href="{% url 'test' %}">{{ i.name }}</a>
     {% endfor %}
 </body>
 </html>
